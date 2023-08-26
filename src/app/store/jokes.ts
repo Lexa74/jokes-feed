@@ -10,11 +10,11 @@ export class JokesStore {
   }
 
   @action
-  async searchJokes(value: string) {
-    if(value.length < 4) {
+  async searchJokes(value: string, numberSymbols: number) {
+    if(value.length < numberSymbols) {
       this.jokesBySearch = []
     }
-    if(value.length >= 4) {
+    if(value.length >= numberSymbols) {
       this.jokesBySearch = await getJokesBySearch(value)
     }
   }

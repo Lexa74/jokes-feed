@@ -10,10 +10,11 @@ interface SearchProps {
 export const Search = ({jokes}: SearchProps) => {
     const store = useDataStore()
     const [searchValue, setSearchValue] = useState('')
+    const numberOfSymbolsToStartSearching = 4;
 
     const onChangeSearch = async (value: string) => {
         setSearchValue(value)
-        await store.jokes.searchJokes(value)
+        await store.jokes.searchJokes(value, numberOfSymbolsToStartSearching)
     }
     return (
         <div className="main-page__search">
@@ -25,7 +26,7 @@ export const Search = ({jokes}: SearchProps) => {
                 className='search__input'
                 autoFocus
             />
-            {searchValue.length > 2 && (<div className="search__result"><span>Found jokes: {jokes.length}</span></div>)}
+            {searchValue.length >= numberOfSymbolsToStartSearching && (<div className="search__result"><span>Found jokes: {jokes.length}</span></div>)}
         </div>
     )
 }
