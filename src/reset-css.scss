@@ -5,4 +5,22 @@
 body {
   margin: 0;
   padding: 0;
+  font-size: 14px;
+  font-family: 'FiraSans', sans-serif;
+  font-weight: 400;
+}
+
+input {
+  outline: none;
+  font-family: 'FiraSans', sans-serif;
+}
+
+.wrapper {
+  width: 1610px;
+  padding: 0 14px;
+  margin: 0 auto;
+
+  @media (max-width: 1610px) {
+    width: 100%;
+  }
 }
