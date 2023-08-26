@@ -11,6 +11,11 @@ export const Main = () => {
 
     return useObserver(() => {
         const jokes: IJokes[] = store.jokes.jokesBySearch
+        const error = store.jokes.error
+
+        if(error) {
+            return <p>Произошла ошибка. Попробуйте обновить страницу.</p>
+        }
         return (
             <div className='wrapper main-page'>
                 <Search jokes={jokes}/>
