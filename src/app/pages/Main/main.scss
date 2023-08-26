@@ -1,0 +1,36 @@
+.main-page {
+  padding-top: 128px;
+
+  @media (max-width: 768px) {
+    padding-top: 60px;
+  }
+  @media (max-width: 475px) {
+    padding-top: 20px;
+  }
+}
+
+.jokes-content {
+  margin-top: 60px;
+
+  .joke-wrapper {
+    &.large {
+      display: flex;
+      margin-bottom: 20px;
+      
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+    }
+    &.small {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      
+      @media (max-width: 475px) {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+    }
+    &.large, &.small {
+      gap: 20px
+    }
+  }
+}

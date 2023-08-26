@@ -1,0 +1,66 @@
+.joke-container {
+  background: #FFF;
+  box-shadow: 0 7px 25px 0 rgba(100, 100, 111, 0.20);
+  position: relative;
+  display: block;
+
+  &.large {
+    width: 100%;
+    padding: 40px 40px 80px 40px;
+
+    @media (max-width: 475px) {
+      padding: 15px 15px 40px 15px;
+    }
+
+    .name {
+      font-size: 20px;
+
+      @media (max-width: 475px) {
+        font-size: 12px;
+      }
+    }
+    .footer {
+      padding: 0 40px;
+
+      @media (max-width: 475px) {
+        padding: 0 15px;
+      }
+    }
+  }
+  &.small {
+    padding: 30px 30px 80px 30px;
+
+    @media (max-width: 475px) {
+      padding: 15px 15px 40px 15px;
+    }
+
+    .name {
+      font-size: 16px;
+
+      @media (max-width: 475px) {
+        font-size: 12px;
+      }
+    }
+    .footer {
+      padding: 0 30px;
+
+      @media (max-width: 475px) {
+        padding: 0 15px;
+      }
+    }
+  }
+  .footer {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    color: #767676;
+    width: 100%;
+
+    @media (max-width: 475px) {
+      font-size: 10px;
+      bottom: 10px;
+    }
+  }
+}
