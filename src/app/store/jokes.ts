@@ -1,4 +1,4 @@
-import {action, computed, makeObservable, observable} from 'mobx';
+import {action, makeObservable, observable} from 'mobx';
 import {IJokes} from "../services/interfaces/jokes";
 import {getJokesBySearch} from "../services/jokes";
 
@@ -7,10 +7,6 @@ export class JokesStore {
 
   constructor() {
     makeObservable(this);
-  }
-  @computed
-  get getJokes() {
-    return this.jokesBySearch
   }
 
   @action

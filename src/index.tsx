@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './reset-css.scss';
+import './app/ui/fonts/fonts.scss'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {DataStoreProvider} from "./app/store/context";
