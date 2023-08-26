@@ -4,6 +4,7 @@ import {getJokesBySearch} from "../services/jokes";
 
 export class JokesStore {
   @observable jokesBySearch: IJokes[] = []
+  @observable error: Error | null = null
 
   constructor() {
     makeObservable(this);
@@ -11,11 +12,15 @@ export class JokesStore {
 
   @action
   async searchJokes(value: string, numberSymbols: number) {
-    if(value.length < numberSymbols) {
-      this.jokesBySearch = []
-    }
-    if(value.length >= numberSymbols) {
-      this.jokesBySearch = await getJokesBySearch(value)
+    try {
+      if(value.length < numberSymbols) {
+        this.jokesBySearch = []
+      }
+      if(value.length >= numberSymbols) {
+        this.jokesBySearch = await getJokesBySearch(value)
+      }
+    } catch (error) {
+      this.error = error as Error
     }
   }
 }
