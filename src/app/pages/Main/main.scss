@@ -1,5 +1,12 @@
 .main-page {
   padding-top: 128px;
+
+  @media (max-width: 768px) {
+    padding-top: 60px;
+  }
+  @media (max-width: 475px) {
+    padding-top: 20px;
+  }
 }
 
 .jokes-content {
@@ -8,16 +15,20 @@
   .joke-wrapper {
     &.large {
       display: flex;
-
-      .joke-container {
-        width: 100%;
+      margin-bottom: 20px;
+      
+      @media (max-width: 768px) {
+        flex-direction: column;
       }
     }
     &.small {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      
+      @media (max-width: 475px) {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
     }
-
     &.large, &.small {
       gap: 20px
     }

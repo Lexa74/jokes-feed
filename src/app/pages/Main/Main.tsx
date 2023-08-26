@@ -17,10 +17,10 @@ export const Main = () => {
                 {!jokes.length ? '' : (
                     <div className='jokes-content'>
                         <div className='joke-wrapper large'>
-                            {jokes.slice(0, 2).map(joke => <JokeItem key={joke.id} {...joke} />)}
+                            {jokes.slice(0, 2).map(joke => <JokeItem key={joke.id} {...joke} variant='large' />)}
                         </div>
                         <div className='joke-wrapper small'>
-                            {jokes.slice(2).map(joke => <JokeItem key={joke.id} {...joke} />)}
+                            {jokes.slice(2).map(joke => <JokeItem key={joke.id} {...joke} variant='small' />)}
                         </div>
                     </div>
                 )}

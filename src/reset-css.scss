@@ -13,9 +13,6 @@ body {
 
 input {
   outline: none;
-  font-size: 14px;
-  font-family: 'FiraSans', sans-serif;
-  font-weight: 400;
 }
 
 .wrapper {
@@ -26,4 +23,9 @@ input {
   @media (max-width: 1610px) {
     width: 100%;
   }
+}
+
+a {
+  text-decoration: none;
+  color: #282626;
 }
